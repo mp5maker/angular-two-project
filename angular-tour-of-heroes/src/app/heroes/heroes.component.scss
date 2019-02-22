@@ -1,0 +1,16 @@
+.hero-detail {
+    padding: 5px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+    ul {
+        padding-left: unset;
+        list-style: none;
+        li {
+            padding: 5px;
+            border-radius: 5px;
+            &.selected {
+                color: firebrick;
+                box-shadow: 0 2px 5px 0 lighten(firebrick, 40%);
+            }
+        }
+    }
+}

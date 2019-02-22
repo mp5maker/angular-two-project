@@ -1,0 +1,27 @@
+<div class="selected-hero" *ngIf="hero">
+    <div>
+      <h2 class="heading">
+        {{ hero.name }} Details
+      </h2>
+      <div class="details-id">
+        <span>
+          id: 
+        </span>
+        <span>
+          {{ hero.id }}
+        </span>
+      </div>
+      <div class="details-name">
+        <span>
+          name: 
+        </span>
+        <span>
+          {{ hero.name | uppercase }}
+        </span>
+      </div>
+      <input [(ngModel)]="hero.name" placeholder="name"/>
+    </div>
+</div>
+<button (click)="goBack()">
+  Go Back
+</button>

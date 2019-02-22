@@ -1,21 +1,31 @@
-<div class="hero-details">
-  <h2 class="heading">
-    {{ hero.name }} Details
-  </h2>
-  <div class="details-id">
-    <span>
-      id: 
-    </span>
-    <span>
-      {{ hero.id }}
-    </span>
-  </div>
-  <div class="details-name">
-    <span>
-      name: 
-    </span>
-    <span>
-      {{ hero.name | uppercase }}
-    </span>
-  </div>
+<div class="hero-detail">
+  <ul>
+    <li
+      [class.selected] = "hero == selectedHero" 
+      *ngFor="let hero of heroes" 
+      (click)="onSelect(hero)">
+      <a routerLink="/heroes/detail/{{hero.id}}">
+        <h2 class="heading">
+          {{ hero.name }} Details
+        </h2>
+        <div class="details-id">
+          <span>
+            id: 
+          </span>
+          <span>
+            {{ hero.id }}
+          </span>
+        </div>
+        <div class="details-name">
+          <span>
+            name: 
+          </span>
+          <span>
+            {{ hero.name | uppercase }}
+          </span>
+        </div>
+      </a>
+    </li>
+  </ul>
+  <app-hero-detail [hero]="selectedHero"></app-hero-detail>
 </div>
